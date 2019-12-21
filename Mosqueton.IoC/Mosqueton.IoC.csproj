@@ -23,5 +23,6 @@
     <ProjectReference Include="..\Mosqueton.IServices\Mosqueton.IServices.csproj" />
     <ProjectReference Include="..\Mosqueton.Services\Mosqueton.Services.csproj" />
     <ProjectReference Include="..\Mosqueton.Data\Mosqueton.Data.csproj" />
+    <ProjectReference Include="..\Mosqueton.Data.Interfaces\Mosqueton.Data.Interfaces.csproj" />
   </ItemGroup>
 </Project>

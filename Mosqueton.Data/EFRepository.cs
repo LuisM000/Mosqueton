@@ -6,11 +6,11 @@ using Mosqueton.Data.Interfaces;
 
 namespace Mosqueton.Data
 {
-    public class EFRepository<T> : IRepository<T> where T : BaseEntity
+    public class EfRepository<T> : IRepository<T> where T : BaseEntity
     {
         private readonly GameContext _dbContext;
 
-        public EFRepository(GameContext dbContext)
+        public EfRepository(GameContext dbContext)
         {
             _dbContext = dbContext;
         }
