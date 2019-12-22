@@ -122,12 +122,35 @@
   <ItemGroup>
     <PackageReference Include="Xamarin.Forms" Version="4.2.0.709249" />
     <PackageReference Include="Xamarin.Essentials" Version="1.2.0" />
+    <PackageReference Include="MonoGame.Framework.iOS">
+      <Version>3.7.1.189</Version>
+    </PackageReference>
+    <PackageReference Include="Microsoft.Extensions.DependencyInjection">
+      <Version>3.1.0</Version>
+    </PackageReference>
   </ItemGroup>
-  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <ItemGroup>
-    <ProjectReference Include="..\Mosqueton\Mosqueton.csproj">
-      <Project>{16C6928C-153F-421A-80B1-FE07F407993E}</Project>
-      <Name>Mosqueton</Name>
+    <ProjectReference Include="..\Mosqueton.Data\Mosqueton.Data.csproj">
+      <Project>{974DD549-AF9C-4FBC-A0CF-94116BA6DBE4}</Project>
+      <Name>Mosqueton.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mosqueton.Data.Interfaces\Mosqueton.Data.Interfaces.csproj">
+      <Project>{FF655944-58D0-4FF2-A6A1-E7BDA02B62C3}</Project>
+      <Name>Mosqueton.Data.Interfaces</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mosqueton.IoC\Mosqueton.IoC.csproj">
+      <Project>{5549C523-3A96-4A43-9058-4C5588990B04}</Project>
+      <Name>Mosqueton.IoC</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mosqueton.IServices\Mosqueton.IServices.csproj">
+      <Project>{24F8464A-C779-461C-8A87-E5FD1B6A7035}</Project>
+      <Name>Mosqueton.IServices</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mosqueton.Services\Mosqueton.Services.csproj">
+      <Project>{247973BA-6051-403E-A3DE-3FB243D5828D}</Project>
+      <Name>Mosqueton.Services</Name>
     </ProjectReference>
   </ItemGroup>
+  <Import Project="..\Mosqueton\Mosqueton.projitems" Label="Shared" Condition="Exists('..\Mosqueton\Mosqueton.projitems')" />
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

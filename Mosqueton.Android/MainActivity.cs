@@ -1,33 +1,42 @@
-﻿using System;
-
-using Android.App;
+﻿using Android.App;
 using Android.Content.PM;
 using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using Microsoft.Xna.Framework;
+using Mosqueton.IoC;
+using Microsoft.Extensions.DependencyInjection;
+
 
 namespace Mosqueton.Droid
 {
-    [Activity(Label = "Mosqueton", Icon = "@mipmap/icon", Theme = "@style/MainTheme", MainLauncher = true, ConfigurationChanges = ConfigChanges.ScreenSize | ConfigChanges.Orientation)]
-    public class MainActivity : global::Xamarin.Forms.Platform.Android.FormsAppCompatActivity
+    [Activity(Label = "Mosqueton",
+            MainLauncher = true,
+            Icon = "@drawable/icon",
+            Theme = "@style/Theme.Splash",
+            AlwaysRetainTaskState = true,
+            LaunchMode = LaunchMode.SingleInstance,
+            ConfigurationChanges = ConfigChanges.Orientation |
+            ConfigChanges.KeyboardHidden |
+            ConfigChanges.Keyboard)]
+    public class MainActivity : AndroidGameActivity
     {
         protected override void OnCreate(Bundle savedInstanceState)
         {
-            TabLayoutResource = Resource.Layout.Tabbar;
-            ToolbarResource = Resource.Layout.Toolbar;
-
             base.OnCreate(savedInstanceState);
 
-            Xamarin.Essentials.Platform.Init(this, savedInstanceState);
-            global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
-            LoadApplication(new App());
+            var container = new Container().Build(ConfigureServices);
+            
+            var game = container.GetService<Game>();
+            SetContentView((View)game.Services.GetService(typeof(View)));
+            game.Run();
         }
-        public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
-        {
-            Xamarin.Essentials.Platform.OnRequestPermissionsResult(requestCode, permissions, grantResults);
 
-            base.OnRequestPermissionsResult(requestCode, permissions, grantResults);
+
+        private void ConfigureServices(ServiceCollection serviceCollection)
+        {
+            serviceCollection.AddScoped<Game>();
         }
     }
 }
