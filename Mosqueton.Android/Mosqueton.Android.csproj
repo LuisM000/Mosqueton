@@ -85,6 +85,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Resources\drawable\" />
+    <Folder Include="GameContent\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Mosqueton.IoC\Mosqueton.IoC.csproj">
@@ -106,6 +107,14 @@
     <ProjectReference Include="..\Mosqueton.Services\Mosqueton.Services.csproj">
       <Project>{247973BA-6051-403E-A3DE-3FB243D5828D}</Project>
       <Name>Mosqueton.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mosqueton.Infrastructure\Mosqueton.Infrastructure.csproj">
+      <Project>{D3F76EBB-BE8F-4A73-8B7F-0DF50498EDA4}</Project>
+      <Name>Mosqueton.Infrastructure</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Mosqueton.Model\Mosqueton.Model.csproj">
+      <Project>{CDC86EFF-A079-42EA-89FE-4881ED72E007}</Project>
+      <Name>Mosqueton.Model</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="..\Mosqueton\Mosqueton.projitems" Label="Shared" Condition="Exists('..\Mosqueton\Mosqueton.projitems')" />

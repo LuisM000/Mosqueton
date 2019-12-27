@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using Mosqueton.Data.Interfaces;
+using Mosqueton.Infrastructure;
 
 namespace Mosqueton.Data
 {

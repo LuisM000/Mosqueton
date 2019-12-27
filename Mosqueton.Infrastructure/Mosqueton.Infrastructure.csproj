@@ -5,7 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Mosqueton.IServices\Mosqueton.IServices.csproj" />
-    <ProjectReference Include="..\Mosqueton.Model\Mosqueton.Model.csproj" />
+    <ProjectReference Include="..\Mosqueton.Data.Interfaces\Mosqueton.Data.Interfaces.csproj" />
   </ItemGroup>
 </Project>

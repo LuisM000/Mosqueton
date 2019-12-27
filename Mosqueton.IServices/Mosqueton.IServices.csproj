@@ -4,4 +4,7 @@
     <TargetFramework>netstandard2.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\Mosqueton.Model\Mosqueton.Model.csproj" />
+  </ItemGroup>
 </Project>
