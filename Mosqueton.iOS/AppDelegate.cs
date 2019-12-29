@@ -1,5 +1,6 @@
 ﻿using Foundation;
 using Microsoft.Extensions.DependencyInjection;
+using Mosqueton.Data;
 using Mosqueton.IoC;
 using UIKit;
 
@@ -11,8 +12,9 @@ namespace Mosqueton.iOS
         public override void FinishedLaunching(UIApplication application)
         {
             var container = new Container().Build(ConfigureServices);
+            container.GetRequiredService<GameContext>().Seed();
 
-            var game = container.GetService<Game>();           
+            var game = container.GetRequiredService<Game>();           
             game.Run();
         }
 

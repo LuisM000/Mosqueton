@@ -1,17 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using Mosqueton.Infrastructure;
+using Mosqueton.Model.Components;
 
 namespace Mosqueton.Model
 {
     public class Level : BaseEntity
     {
-        public Graphic Graphic { get; set; }
+        public GraphicComponent GraphicComponent { get; set; }
         public IList<GameObject> GameObjects { get; set; }
 
         public void Update(TimeSpan gameTime)
         {
-            Graphic.Update(gameTime);
+            GraphicComponent.Update(gameTime);
 
             foreach (var gameObject in GameObjects)
             {

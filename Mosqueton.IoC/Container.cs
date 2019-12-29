@@ -14,7 +14,7 @@ namespace Mosqueton.IoC
         {
             var serviceCollection = new ServiceCollection();
 
-            serviceCollection.AddDbContext<GameContext>(opt => opt.UseInMemoryDatabase("GameDB"));
+            serviceCollection.AddDbContext<GameContext>(opt => opt.UseInMemoryDatabase("GameDB").EnableSensitiveDataLogging());
             serviceCollection.AddScoped(typeof(IRepository<>), typeof(EfRepository<>));
             serviceCollection.AddScoped<ILevelManager, LevelManager>();
 

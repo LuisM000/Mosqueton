@@ -7,7 +7,7 @@ using Android.OS;
 using Microsoft.Xna.Framework;
 using Mosqueton.IoC;
 using Microsoft.Extensions.DependencyInjection;
-
+using Mosqueton.Data;
 
 namespace Mosqueton.Droid
 {
@@ -27,8 +27,9 @@ namespace Mosqueton.Droid
             base.OnCreate(savedInstanceState);
 
             var container = new Container().Build(ConfigureServices);
-            
-            var game = container.GetService<Game>();
+            container.GetRequiredService<GameContext>().Seed();
+
+            var game = container.GetRequiredService<Game>();
             SetContentView((View)game.Services.GetService(typeof(View)));
             game.Run();
         }

@@ -1,7 +1,9 @@
 ﻿using System;
+using Mosqueton.Infrastructure;
+
 namespace Mosqueton.Model.Components
 {
-    public class GraphicComponent
+    public class GraphicComponent : BaseEntity
     {
         public string SheetTexturePath { get; set; }
 

@@ -10,5 +10,6 @@
   <ItemGroup>
     <ProjectReference Include="..\Mosqueton.Data.Interfaces\Mosqueton.Data.Interfaces.csproj" />
     <ProjectReference Include="..\Mosqueton.Infrastructure\Mosqueton.Infrastructure.csproj" />
+    <ProjectReference Include="..\Mosqueton.Model\Mosqueton.Model.csproj" />
   </ItemGroup>
 </Project>

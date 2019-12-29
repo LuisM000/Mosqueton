@@ -7,6 +7,7 @@ using Microsoft.Xna.Framework.Input.Touch;
 using MonoGame.Extended;
 using MonoGame.Extended.ViewportAdapters;
 using Mosqueton.Data;
+using Mosqueton.Data.Interfaces;
 using Mosqueton.IServices;
 
 namespace Mosqueton
@@ -17,16 +18,16 @@ namespace Mosqueton
         private const int Height = 1080;
 
         private readonly ILevelManager _levelManager;
-		private readonly GraphicsDeviceManager _graphics;
+        private readonly IRepository<Mosqueton.Model.Game> _gameRepository;
+        private readonly GraphicsDeviceManager _graphics;
 
         private SpriteBatch _spriteBatch;
         private Texture2D _scenario;
         private OrthographicCamera _camera;
 
-        public Game(ILevelManager levelManager)
+        public Game(ILevelManager levelManager, IRepository<Mosqueton.Model.Game> gameRepository)
         {
             _levelManager = levelManager;
-
             Content.RootDirectory = "GameContent";
             _graphics = new GraphicsDeviceManager(this)
             {
@@ -62,11 +63,7 @@ namespace Mosqueton
             if (touchCollection.Count > 0)
             {
                 var touch = touchCollection[0].Position;
-
-
-                var touchTransformed = _camera.ScreenToWorld(touch);
-                System.Diagnostics.Debug.WriteLine(touchTransformed);
-
+                _ = _camera.ScreenToWorld(touch);
             }
 
             base.Update(gameTime);            
