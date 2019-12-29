@@ -14,7 +14,7 @@ namespace Mosqueton.Data
             {
                 Id = 1,
                 Settings = new GameSettings() { Id = 1, Width = 1920, Height = 1080 },
-                StartLevel = new Level() { Id = 1, GraphicComponent = new GraphicComponent() { Id = 1, SheetTexturePath = "Background.jpg" } }
+                StartLevel = new Level() { Id = 1, GraphicComponent = new GraphicComponent() { Id = 1, SheetTexturePath = "GameContent/Background.jpg" } }
             });
             gameContext.SaveChanges();
         }

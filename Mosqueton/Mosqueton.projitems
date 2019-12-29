@@ -10,5 +10,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)Game.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GameServices\GameManager.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)GameServices\IGameManager.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="$(MSBuildThisFileDirectory)GameServices\" />
   </ItemGroup>
 </Project>

@@ -5,8 +5,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mosqueton.Android", "Mosque
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mosqueton.iOS", "Mosqueton.iOS\Mosqueton.iOS.csproj", "{920DA93D-F656-44E8-96CC-EB994C00EB62}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mosqueton.IoC", "Mosqueton.IoC\Mosqueton.IoC.csproj", "{5549C523-3A96-4A43-9058-4C5588990B04}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mosqueton.IServices", "Mosqueton.IServices\Mosqueton.IServices.csproj", "{24F8464A-C779-461C-8A87-E5FD1B6A7035}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mosqueton.Services", "Mosqueton.Services\Mosqueton.Services.csproj", "{247973BA-6051-403E-A3DE-3FB243D5828D}"
@@ -22,6 +20,10 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Mosqueton.Infrastructure", "Mosqueton.Infrastructure\Mosqueton.Infrastructure.csproj", "{D3F76EBB-BE8F-4A73-8B7F-0DF50498EDA4}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{C8F32C44-C01A-4E02-B9A1-ECAC2B297AB4}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Mosqueton.MonoGame.Infrastructure", "Mosqueton.MonoGame.Infrastructure\Mosqueton.MonoGame.Infrastructure.shproj", "{E86B2BC9-104E-42CA-B12A-8C796F425295}"
+EndProject
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "Mosqueton.IoC", "Mosqueton.IoC\Mosqueton.IoC.shproj", "{7B1F424C-70C7-4ACA-8F2E-0399EFCEA677}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -57,18 +59,6 @@ Global
 		{920DA93D-F656-44E8-96CC-EB994C00EB62}.Debug|iPhone.Build.0 = Debug|iPhone
 		{920DA93D-F656-44E8-96CC-EB994C00EB62}.Release|iPhone.ActiveCfg = Release|iPhone
 		{920DA93D-F656-44E8-96CC-EB994C00EB62}.Release|iPhone.Build.0 = Release|iPhone
-		{5549C523-3A96-4A43-9058-4C5588990B04}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5549C523-3A96-4A43-9058-4C5588990B04}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5549C523-3A96-4A43-9058-4C5588990B04}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5549C523-3A96-4A43-9058-4C5588990B04}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5549C523-3A96-4A43-9058-4C5588990B04}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
-		{5549C523-3A96-4A43-9058-4C5588990B04}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
-		{5549C523-3A96-4A43-9058-4C5588990B04}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
-		{5549C523-3A96-4A43-9058-4C5588990B04}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
-		{5549C523-3A96-4A43-9058-4C5588990B04}.Debug|iPhone.ActiveCfg = Debug|Any CPU
-		{5549C523-3A96-4A43-9058-4C5588990B04}.Debug|iPhone.Build.0 = Debug|Any CPU
-		{5549C523-3A96-4A43-9058-4C5588990B04}.Release|iPhone.ActiveCfg = Release|Any CPU
-		{5549C523-3A96-4A43-9058-4C5588990B04}.Release|iPhone.Build.0 = Release|Any CPU
 		{24F8464A-C779-461C-8A87-E5FD1B6A7035}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{24F8464A-C779-461C-8A87-E5FD1B6A7035}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{24F8464A-C779-461C-8A87-E5FD1B6A7035}.Release|Any CPU.ActiveCfg = Release|Any CPU

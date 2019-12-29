@@ -5,6 +5,8 @@ using Mosqueton.Data;
 using Mosqueton.Data.Interfaces;
 using Mosqueton.IServices;
 using Mosqueton.Services;
+using Mosqueton.GameServices;
+using Mosqueton.MonoGame.Infrastructure;
 
 namespace Mosqueton.IoC
 {
@@ -18,6 +20,7 @@ namespace Mosqueton.IoC
 			serviceCollection.AddScoped(typeof(IRepository<>), typeof(EfRepository<>));
 			serviceCollection.AddScoped<IGameManager, GameManager>();
 			serviceCollection.AddScoped<ILevelManager, LevelManager>();
+            serviceCollection.AddScoped<ITextureStore, TextureStore>();
 
 			configure?.Invoke(serviceCollection);
 

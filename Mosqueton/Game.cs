@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Input.Touch;
 using MonoGame.Extended;
 using MonoGame.Extended.ViewportAdapters;
-using Mosqueton.Data;
-using Mosqueton.Data.Interfaces;
-using Mosqueton.IServices;
+using Mosqueton.GameServices;
+using Mosqueton.MonoGame.Infrastructure;
 
 namespace Mosqueton
 {
@@ -16,19 +12,18 @@ namespace Mosqueton
 	{
         private const int Width = 1920;
         private const int Height = 1080;
+         
+        private readonly IGameManager _gameManager;
+        private readonly ITextureStore _textureStore;
 
-        private readonly ILevelManager _levelManager;
-        private readonly IRepository<Mosqueton.Model.Game> _gameRepository;
         private readonly GraphicsDeviceManager _graphics;
-
         private SpriteBatch _spriteBatch;
         private Texture2D _scenario;
         private OrthographicCamera _camera;
 
-        public Game(ILevelManager levelManager, IRepository<Mosqueton.Model.Game> gameRepository)
+        public Game(IGameManager gameManager)
         {
-            _levelManager = levelManager;
-            Content.RootDirectory = "GameContent";
+            _gameManager = gameManager; 
             _graphics = new GraphicsDeviceManager(this)
             {
                 SupportedOrientations = DisplayOrientation.LandscapeLeft | DisplayOrientation.LandscapeRight
@@ -39,6 +34,7 @@ namespace Mosqueton
         {
             var viewportAdapter = new BoxingViewportAdapter(Window, GraphicsDevice, Width, Height);
             _camera = new OrthographicCamera(viewportAdapter);
+            _gameManager.Initialize();
 
             base.Initialize();
         }
@@ -46,18 +42,13 @@ namespace Mosqueton
         protected override void LoadContent()
         {
             _spriteBatch = new SpriteBatch(GraphicsDevice);
-            using (var stream = TitleContainer.OpenStream("GameContent/FullBackgroud.png"))
-            {
-                _scenario = Texture2D.FromStream(_graphics.GraphicsDevice, stream);
-            }
+           
             base.LoadContent();
         }
 
         
         protected override void Update(GameTime gameTime)
         {
-            _levelManager.Update(gameTime.ElapsedGameTime);
-
             TouchCollection touchCollection = TouchPanel.GetState();
 
             if (touchCollection.Count > 0)
@@ -74,12 +65,12 @@ namespace Mosqueton
             var matrix = _camera.GetViewMatrix();
             
             _spriteBatch.Begin(transformMatrix: matrix);
-            _spriteBatch.Draw(_scenario, Vector2.Zero, Color.White);
+
+            _gameManager.Draw(_spriteBatch);
+
             _spriteBatch.End();
 
-
             base.Draw(gameTime);
-
         }
     }
 }
