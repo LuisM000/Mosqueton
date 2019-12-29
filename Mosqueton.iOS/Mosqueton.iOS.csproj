@@ -141,10 +141,6 @@
       <Project>{FF655944-58D0-4FF2-A6A1-E7BDA02B62C3}</Project>
       <Name>Mosqueton.Data.Interfaces</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Mosqueton.IoC\Mosqueton.IoC.csproj">
-      <Project>{5549C523-3A96-4A43-9058-4C5588990B04}</Project>
-      <Name>Mosqueton.IoC</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Mosqueton.IServices\Mosqueton.IServices.csproj">
       <Project>{24F8464A-C779-461C-8A87-E5FD1B6A7035}</Project>
       <Name>Mosqueton.IServices</Name>
@@ -169,6 +165,7 @@
     <BundleResource Include="GameContent\Background.jpg" />
     <BundleResource Include="GameContent\FullBackgroud.png" />
   </ItemGroup>
+  <Import Project="..\Mosqueton.IoC\Mosqueton.IoC.projitems" Label="Shared" Condition="Exists('..\Mosqueton.IoC\Mosqueton.IoC.projitems')" />
   <Import Project="..\Mosqueton\Mosqueton.projitems" Label="Shared" Condition="Exists('..\Mosqueton\Mosqueton.projitems')" />
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
 </Project>

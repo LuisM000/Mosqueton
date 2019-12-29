@@ -74,6 +74,9 @@
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
     <None Include="Properties\AndroidManifest.xml" />
+    <None Include="GameContent\FullBackgroud.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\values\styles.xml" />
@@ -91,10 +94,6 @@
     <Folder Include="GameContent\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Mosqueton.IoC\Mosqueton.IoC.csproj">
-      <Project>{5549C523-3A96-4A43-9058-4C5588990B04}</Project>
-      <Name>Mosqueton.IoC</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Mosqueton.Data\Mosqueton.Data.csproj">
       <Project>{974DD549-AF9C-4FBC-A0CF-94116BA6DBE4}</Project>
       <Name>Mosqueton.Data</Name>
@@ -122,10 +121,8 @@
   </ItemGroup>
   <ItemGroup>
     <AndroidAsset Include="GameContent\Background.jpg" />
-    <AndroidAsset Include="GameContent\FullBackgroud.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </AndroidAsset>
   </ItemGroup>
+  <Import Project="..\Mosqueton.IoC\Mosqueton.IoC.projitems" Label="Shared" Condition="Exists('..\Mosqueton.IoC\Mosqueton.IoC.projitems')" />
   <Import Project="..\Mosqueton\Mosqueton.projitems" Label="Shared" Condition="Exists('..\Mosqueton\Mosqueton.projitems')" />
  <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

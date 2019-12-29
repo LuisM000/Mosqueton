@@ -8,19 +8,20 @@ using Mosqueton.Services;
 
 namespace Mosqueton.IoC
 {
-    public class Container
-    {
-        public IServiceProvider Build(Action<ServiceCollection> configure)
-        {
-            var serviceCollection = new ServiceCollection();
+	public class Container
+	{
+		public IServiceProvider Build(Action<ServiceCollection> configure)
+		{
+			var serviceCollection = new ServiceCollection();
 
-            serviceCollection.AddDbContext<GameContext>(opt => opt.UseInMemoryDatabase("GameDB").EnableSensitiveDataLogging());
-            serviceCollection.AddScoped(typeof(IRepository<>), typeof(EfRepository<>));
-            serviceCollection.AddScoped<ILevelManager, LevelManager>();
+			serviceCollection.AddDbContext<GameContext>(opt => opt.UseInMemoryDatabase("GameDB").EnableSensitiveDataLogging());
+			serviceCollection.AddScoped(typeof(IRepository<>), typeof(EfRepository<>));
+			serviceCollection.AddScoped<IGameManager, GameManager>();
+			serviceCollection.AddScoped<ILevelManager, LevelManager>();
 
-            configure?.Invoke(serviceCollection);
+			configure?.Invoke(serviceCollection);
 
-            return serviceCollection.BuildServiceProvider();
-        }
-    }
+			return serviceCollection.BuildServiceProvider();
+		}
+	}
 }
