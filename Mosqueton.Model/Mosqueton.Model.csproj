@@ -7,4 +7,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Mosqueton.Infrastructure\Mosqueton.Infrastructure.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Components\" />
+  </ItemGroup>
 </Project>

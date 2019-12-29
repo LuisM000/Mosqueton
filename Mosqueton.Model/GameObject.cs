@@ -1,16 +1,17 @@
 ﻿using System;
 using Mosqueton.Data.Interfaces;
 using Mosqueton.Infrastructure;
+using Mosqueton.Model.Components;
 
 namespace Mosqueton.Model
 {
     public class GameObject : BaseEntity
     {
-        public Graphic Graphic { get; set; }
+        public GraphicComponent GraphicComponent { get; set; }
 
         public void Update(TimeSpan gameTime)
         {
-            Graphic.Update(gameTime);
+            GraphicComponent.Update(gameTime);
         }
     }
 }
