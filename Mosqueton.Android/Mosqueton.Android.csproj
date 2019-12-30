@@ -125,6 +125,7 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </AndroidAsset>
     <AndroidAsset Include="GameContent\Tree.png" />
+    <AndroidAsset Include="GameContent\Character.png" />
   </ItemGroup>
   <Import Project="..\Mosqueton.MonoGame.Infrastructure\Mosqueton.MonoGame.Infrastructure.projitems" Label="Shared" Condition="Exists('..\Mosqueton.MonoGame.Infrastructure\Mosqueton.MonoGame.Infrastructure.projitems')" />
   <Import Project="..\Mosqueton.IoC\Mosqueton.IoC.projitems" Label="Shared" Condition="Exists('..\Mosqueton.IoC\Mosqueton.IoC.projitems')" />

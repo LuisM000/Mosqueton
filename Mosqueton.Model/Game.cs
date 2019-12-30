@@ -6,7 +6,6 @@ namespace Mosqueton.Model
 {
     public class Game: BaseEntity
     {
-
         public GameSettings Settings { get; set; }
         public Level StartLevel { get; set; }
 
@@ -22,6 +21,11 @@ namespace Mosqueton.Model
         public void SetCurrentLevel(Level level)
         {
             _currentLevel = level;
+        }
+
+        public void Update(TimeSpan gameTime)
+        {
+            CurrentLevel.Update(gameTime);
         }
     }
 }

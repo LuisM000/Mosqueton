@@ -7,5 +7,6 @@ namespace Mosqueton.Model.Components
     public class Frame : BaseEntity
     {
         public Rectangle SourceRectangle { get; set; }
+        public TimeSpan Duration { get; set; }
     }
 }

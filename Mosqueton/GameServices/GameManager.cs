@@ -29,6 +29,11 @@ namespace Mosqueton.GameServices
             _game.SetCurrentLevel(_game.StartLevel);
         }
 
+        public void Update(GameTime gameTime)
+        {
+            _game.Update(gameTime.ElapsedGameTime);
+        }
+
         public void Draw(SpriteBatch spriteBatch)
         {
             Draw(spriteBatch, _game.CurrentLevel.GraphicComponent);

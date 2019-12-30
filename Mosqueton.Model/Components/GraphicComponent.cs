@@ -8,19 +8,20 @@ namespace Mosqueton.Model.Components
     public class GraphicComponent : BaseEntity
     {
         public string SheetTexturePath { get; set; }
-        public IList<Frame> Frames { get; set; }
+
+        public FrameComponent FrameComponent { get; set; }
 
         public Frame CurrentFrame
         {
             get
             {
-                return Frames.First();
+                return FrameComponent.CurrentFrame;
             }
         }
 
         public void Update(TimeSpan gameTime)
         {
-
+            FrameComponent.Update(gameTime);
         }
     }
 }

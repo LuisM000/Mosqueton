@@ -23,7 +23,11 @@ namespace Mosqueton.Data
                     {
                         Id = 1,
                         SheetTexturePath = "GameContent/Background.jpg",
-                        Frames = new List<Frame>() { new Frame() { Id = 1, SourceRectangle = new Rectangle(0, 0, 2500, 2160) } }
+                        FrameComponent = new FrameComponent()
+                        {
+                            Id = 1,
+                            Frames = new List<Frame>() { new Frame() { Id = 1, SourceRectangle = new Rectangle(0, 0, 2500, 2160) } }
+                        }
                     },
                     GameObjects = new List<GameObject>()
                     {
@@ -31,11 +35,34 @@ namespace Mosqueton.Data
                         {
                             Id = 1,
                             GraphicComponent = new GraphicComponent(){Id = 2, SheetTexturePath = "GameContent/Tree.png",
-                            Frames = new List<Frame>(){ new Frame() { Id = 2, SourceRectangle=new Rectangle(0,0, 127,192) } } }
+                            FrameComponent = new FrameComponent()
+                            {
+                                Id = 2,
+                                Frames = new List<Frame>(){ new Frame() { Id = 2, SourceRectangle=new Rectangle(0,0, 127,192) } } }
+                            }
+                        },
+                        new GameObject()
+                        {
+                            Id = 2,
+                            GraphicComponent = new GraphicComponent()
+                            {
+                                Id = 3, SheetTexturePath = "GameContent/Character.png",
+                                FrameComponent = new FrameComponent()
+                                {
+                                    Id = 3,
+                                    Frames = new List<Frame>()
+                                    {
+                                        new Frame() { Id = 3, SourceRectangle= new Rectangle(0,0, 64,64), Duration = TimeSpan.FromSeconds (.25) },
+                                        new Frame() { Id = 4, SourceRectangle= new Rectangle(64, 0, 64, 64), Duration = TimeSpan.FromSeconds (.25) },
+                                        new Frame() { Id = 5, SourceRectangle= new Rectangle(0, 0, 64, 64), Duration = TimeSpan.FromSeconds (.25) },
+                                        new Frame() { Id = 6, SourceRectangle= new Rectangle(128, 0, 64, 64), Duration = TimeSpan.FromSeconds (.25) },
+                                    }
+                                }
+                            }
                         }
                     }
                 },
-            }); ;
+            });
             gameContext.SaveChanges();
         }
     }

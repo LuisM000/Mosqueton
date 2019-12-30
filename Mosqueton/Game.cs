@@ -57,6 +57,8 @@ namespace Mosqueton
                 _ = _camera.ScreenToWorld(touch);
             }
 
+            _gameManager.Update(gameTime);
+
             base.Update(gameTime);            
         }
 
