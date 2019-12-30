@@ -14,7 +14,7 @@ namespace Mosqueton.MonoGame.Infrastructure
             Texture2D texture;
             if(!_textures.TryGetValue(assetPath, out texture))
             {
-                using (var stream = TitleContainer.OpenStream("GameContent/FullBackgroud.png"))
+                using (var stream = TitleContainer.OpenStream(assetPath))
                 {
                     texture = Texture2D.FromStream(graphicsDevice, stream);
                 }
