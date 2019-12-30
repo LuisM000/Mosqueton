@@ -2,7 +2,9 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Mosqueton.Data.Interfaces;
+using Mosqueton.Helpers;
 using Mosqueton.Model;
+using Mosqueton.Model.Components;
 using Mosqueton.MonoGame.Infrastructure;
 
 namespace Mosqueton.GameServices
@@ -29,8 +31,19 @@ namespace Mosqueton.GameServices
 
         public void Draw(SpriteBatch spriteBatch)
         {
-            var texture = _textureStore.GetOrCreate(spriteBatch.GraphicsDevice, _game.CurrentLevel.GraphicComponent.SheetTexturePath);
-            spriteBatch.Draw(texture, Vector2.Zero, Color.White);
+            Draw(spriteBatch, _game.CurrentLevel.GraphicComponent);
+
+            foreach (var gameObject in _game.CurrentLevel.GameObjects)
+            {
+                Draw(spriteBatch, gameObject.GraphicComponent);
+            }
+        }
+
+        private void Draw(SpriteBatch spriteBatch, GraphicComponent graphicsComponent)
+        {
+            var texture = _textureStore.GetOrCreate(spriteBatch.GraphicsDevice, graphicsComponent.SheetTexturePath);
+            var currentFrame = graphicsComponent.CurrentFrame;
+            spriteBatch.Draw(texture, Vector2.Zero, currentFrame.SourceRectangle.ToXnaRectangle(), Color.White);
         }
     }
 }
