@@ -170,6 +170,7 @@
   <ItemGroup>
     <BundleResource Include="GameContent\Background.jpg" />
     <BundleResource Include="GameContent\FullBackgroud.png" />
+    <BundleResource Include="GameContent\Tree.png" />
   </ItemGroup>
   <Import Project="..\Mosqueton.MonoGame.Infrastructure\Mosqueton.MonoGame.Infrastructure.projitems" Label="Shared" Condition="Exists('..\Mosqueton.MonoGame.Infrastructure\Mosqueton.MonoGame.Infrastructure.projitems')" />
   <Import Project="..\Mosqueton.IoC\Mosqueton.IoC.projitems" Label="Shared" Condition="Exists('..\Mosqueton.IoC\Mosqueton.IoC.projitems')" />
