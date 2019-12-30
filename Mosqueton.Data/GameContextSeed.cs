@@ -39,6 +39,12 @@ namespace Mosqueton.Data
                             {
                                 Id = 2,
                                 Frames = new List<Frame>(){ new Frame() { Id = 2, SourceRectangle=new Rectangle(0,0, 127,192) } } }
+                            },
+                            PhysicComponent = new PhysicComponent()
+                            {
+                                Id = 1,
+                                InitialPosition = new Point(300,300),
+                                BasePosition = new Point(63,192)
                             }
                         },
                         new GameObject()
@@ -58,6 +64,12 @@ namespace Mosqueton.Data
                                         new Frame() { Id = 6, SourceRectangle= new Rectangle(128, 0, 64, 64), Duration = TimeSpan.FromSeconds (.25) },
                                     }
                                 }
+                            },
+                            PhysicComponent = new PhysicComponent()
+                            {
+                                Id = 2,
+                                InitialPosition = new Point(450,900),
+                                BasePosition = new Point(32,64)
                             }
                         }
                     }

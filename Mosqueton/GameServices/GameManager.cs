@@ -40,9 +40,19 @@ namespace Mosqueton.GameServices
 
             foreach (var gameObject in _game.CurrentLevel.GameObjects)
             {
-                Draw(spriteBatch, gameObject.GraphicComponent);
+                Draw(spriteBatch, gameObject);
             }
         }
+
+        private void Draw(SpriteBatch spriteBatch, GameObject gameObject)
+        {
+            var texture = _textureStore.GetOrCreate(spriteBatch.GraphicsDevice, gameObject.GraphicComponent.SheetTexturePath);
+            var currentFrame = gameObject.GraphicComponent.CurrentFrame;
+            var currentPosition = gameObject.PhysicComponent.CurrentPosition.ToVector2();
+
+            spriteBatch.Draw(texture, currentPosition, currentFrame.SourceRectangle.ToXnaRectangle(), Color.White);
+        }
+
 
         private void Draw(SpriteBatch spriteBatch, GraphicComponent graphicsComponent)
         {

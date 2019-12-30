@@ -13,6 +13,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)GameServices\GameManager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)GameServices\IGameManager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\RectangleExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\PointExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)GameServices\" />
