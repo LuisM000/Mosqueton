@@ -11,6 +11,8 @@ namespace Mosqueton.Model.Components
         private double _currentVelocityY;
 
         public double Velocity { get; set; }
+
+        [NotMapped]
         public PointF? Destination { get; set; }
 
         

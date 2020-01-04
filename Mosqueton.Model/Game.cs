@@ -9,18 +9,12 @@ namespace Mosqueton.Model
         public GameSettings Settings { get; set; }
         public Level StartLevel { get; set; }
 
-        private Level _currentLevel;
-        public Level CurrentLevel
-        {
-            get
-            {
-                return _currentLevel;
-            }
-        }
+        [NotMapped]
+        public Level CurrentLevel { get; private set; }
 
         public void SetCurrentLevel(Level level)
         {
-            _currentLevel = level;
+            CurrentLevel = level;
         }
 
         public void Update(TimeSpan gameTime)

@@ -12,6 +12,7 @@ namespace Mosqueton.Model.Components
         public PointF InitialPosition { get; set; }
         public MovementComponent MovementComponent { get; set; }
 
+        [NotMapped]
         public PointF CurrentPosition { get; set; }
 
  
