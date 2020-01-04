@@ -10,5 +10,6 @@
   <ItemGroup>
     <Folder Include="Components\" />
     <Folder Include="Descriptors\" />
+    <Folder Include="Helpers\" />
   </ItemGroup>
 </Project>

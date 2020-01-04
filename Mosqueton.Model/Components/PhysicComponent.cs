@@ -6,23 +6,36 @@ namespace Mosqueton.Model.Components
 {
     public class PhysicComponent : BaseEntity
     {
-        public Point BasePosition { get; set; }
+        private bool _hasBeenInitialized;
 
-        public Point InitialPosition { get; set; }
+        public PointF BasePosition { get; set; }
+        public PointF InitialPosition { get; set; }
+        public MovementComponent MovementComponent { get; set; }
 
-        public Point CurrentPosition
+        public PointF CurrentPosition { get; set; }
+
+ 
+        public void Update(TimeSpan gameTime)
         {
-            get
+            EnsureInitialization();
+            MovementComponent?.Update(this, gameTime);
+        }
+
+        public PointF GetDistanceToCurrentPosition(PointF position)
+        {
+            var transformedPosition = PointF.Subtract(position, new SizeF(BasePosition));
+            return new PointF(transformedPosition.X - CurrentPosition.X, transformedPosition.Y - CurrentPosition.Y);
+        }
+
+
+        private void EnsureInitialization()
+        {
+            if(!_hasBeenInitialized)
             {
-                return Point.Subtract(InitialPosition, new Size(BasePosition));
+                _hasBeenInitialized = true;
+                CurrentPosition = PointF.Subtract(InitialPosition, new SizeF(BasePosition));
             }
         }
 
-         
-
-        public void Update(TimeSpan gameTime)
-        {
-
-        }
     }
 }
