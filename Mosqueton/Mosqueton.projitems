@@ -14,6 +14,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)GameServices\IGameManager.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\RectangleExtensions.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Helpers\PointExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Helpers\VectorExtensions.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)GameServices\" />

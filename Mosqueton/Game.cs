@@ -49,15 +49,19 @@ namespace Mosqueton
         
         protected override void Update(GameTime gameTime)
         {
-            TouchCollection touchCollection = TouchPanel.GetState();
+            Vector2? tapPosition = null;
+            var touchCollection = TouchPanel.GetState();
 
             if (touchCollection.Count > 0)
             {
-                var touch = touchCollection[0].Position;
-                _ = _camera.ScreenToWorld(touch);
+                var touch = touchCollection[0];
+                if(touch.State == TouchLocationState.Pressed)
+                {
+                    tapPosition = _camera.ScreenToWorld(touch.Position);
+                }
             }
 
-            _gameManager.Update(gameTime);
+            _gameManager.Update(gameTime, tapPosition);
 
             base.Update(gameTime);            
         }

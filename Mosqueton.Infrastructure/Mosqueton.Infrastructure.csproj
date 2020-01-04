@@ -7,4 +7,7 @@
   <ItemGroup>
     <ProjectReference Include="..\Mosqueton.Data.Interfaces\Mosqueton.Data.Interfaces.csproj" />
   </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="System.ComponentModel.Annotations" Version="4.7.0" />
+  </ItemGroup>
 </Project>

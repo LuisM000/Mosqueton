@@ -7,7 +7,7 @@ namespace Mosqueton.GameServices
     public interface IGameManager
     {
         void Initialize();
-        void Update(GameTime gameTime);
+        void Update(GameTime gameTime, Vector2? tapPosition);
         void Draw(SpriteBatch spriteBatch);
     }
 }

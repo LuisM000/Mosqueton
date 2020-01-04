@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Mosqueton.Data.Interfaces;
@@ -29,8 +30,14 @@ namespace Mosqueton.GameServices
             _game.SetCurrentLevel(_game.StartLevel);
         }
 
-        public void Update(GameTime gameTime)
+        public void Update(GameTime gameTime, Vector2? tapPosition)
         {
+            if(tapPosition != null)
+            {
+                var character = _game.CurrentLevel.GameObjects.FirstOrDefault(g => g.Id == 200);
+                character.PhysicComponent.MovementComponent.MoveTo(tapPosition.Value.ToPointF(), character.PhysicComponent);
+            }
+          
             _game.Update(gameTime.ElapsedGameTime);
         }
 
